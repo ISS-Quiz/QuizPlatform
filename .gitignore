@@ -1,0 +1,5 @@
+*.log
+.DS_Store
+bower_components
+node_modules
+package-lock.json
