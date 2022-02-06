@@ -3,6 +3,9 @@ import  { useState } from "react";
 import './App.css';
 import {useSpring, animated} from 'react-spring';
 
+import LoginForm from './components/LoginForm';
+import RegisterForm from './components/RegisterForm';
+
 function App() {
 
   const [registrationFormStatus, setRegistrationFormStatus ] = useState(false);
@@ -21,6 +24,9 @@ const registerBtnProps = useSpring ({borderBottom: registrationFormStatus ? 'sol
   function registerClicked() {  setRegistrationFormStatus(true)}
   function loginClicked() { setRegistrationFormStatus(false)}
 
+  
+
+
 
   return (
     <div className="login-register-wrapper">
@@ -38,39 +44,6 @@ const registerBtnProps = useSpring ({borderBottom: registrationFormStatus ? 'sol
     
     </div>
   );
-}
-
-function LoginForm() {
-return (
- <React.Fragment>
-    <label for='username'> USERNAME </label>
-    <input type='text' id='username' />
-    <label for='password'> PASSWORD </label>
-    <input type='text' id='password' />
-    <input type='submit' value='submit' className='submit'/>
-  </React.Fragment>
-
-
-
-)}
-
-
-function RegisterForm() {
-  return (
-  <React.Fragment>
-    <label for='fullname'> full name </label>
-    <input type='text' id='fullname' />
-    <label for='email'> email </label>
-    <input type='text' id='email' />
-    <label for='password'> password </label>
-    <input type='text' id='password' />
-    <label for='confirmpassword'> confirm password </label>
-    <input type='text' id='confirmpassword' />
-    <input type='submit' value='submit' className='submit'/>
-  </React.Fragment>
-    
-
-  )
 }
 export default App;
  

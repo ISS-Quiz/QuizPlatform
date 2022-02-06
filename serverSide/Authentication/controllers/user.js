@@ -6,8 +6,11 @@ var expressJwt = require('express-jwt')
 
 
 exports.signup = (req,res) => {
+    
     const errors = validationResult(req)
     if(!errors.isEmpty()){
+        console.log(errors);
+
         return res.status(400).json({
             error: errors.array()[0].msg
         })
@@ -15,11 +18,13 @@ exports.signup = (req,res) => {
     const user = new User(req.body)
     user.save((err, user) => {
         if(err) {
+
             return res.status(400).json({
                 error:"Unable to add user"
             
             })
         }
+        console.log(user)
         return res.json({
             message: "Success",
             user
@@ -28,16 +33,19 @@ exports.signup = (req,res) => {
 }
 
 exports.signin = (req,res) => {
-    const {email,password} =req.body
+    const {name,password} =req.body
 
-    User.findOne({email}, (err,user)=> {
+    User.findOne({name}, (err,user)=> {
         if(err || !user) {
-            return res.status(400).json()
-              error:"Email was not found"
+            return res.status(400).json({
+                error:"Email was not found"
+            })
+              
         }
 
         //Authenticate the user
         if(!user.authenticate(password)) {
+            console.log("error")
             return res.status(400).json({
                 error: "Email and password do not match"
             })
@@ -50,7 +58,9 @@ exports.signin = (req,res) => {
         res.cookie('token',token, {expire: new Date()+1})
 
         // Send response 
+        
         const {_id,name,email,encry_password} = user
+        console.log(user.name)
         return res.json({
             token ,
             user: {

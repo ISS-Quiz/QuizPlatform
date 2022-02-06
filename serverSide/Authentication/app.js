@@ -29,9 +29,9 @@ const userRoutes= require("./routes/user")
 // Using routes
 app.use('/api', userRoutes)
 
-const port = process.env.PORT || 8000
+//const port = process.env.PORT || 8000
 
 // Starting a server
-app.listen(port, () => {
-    console.log(`App is running at ${port}`)
+app.listen(8000, () => {
+    console.log("started listening for resquests on port 8000");
 })

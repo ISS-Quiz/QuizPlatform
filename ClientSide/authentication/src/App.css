@@ -22,7 +22,7 @@ body {
   padding-bottom: 100px;
 }
 .login-register-wrapper {
-  height: 560px;
+  height: 580px;
   width: 500px;
   margin-left: auto;
   margin-right: auto;
@@ -86,7 +86,7 @@ button.active {
   text-transform: uppercase;
 }
 
-input.submit {
+button.submit {
   font-weight: 700;
   text-transform: uppercase;
   font-size: 1em;
@@ -101,6 +101,10 @@ input.submit {
   margin-top: 23px;
   background-color: rgb(149,28,82);
 
+}
+button.submit:hover {
+  background-color: white;
+  color: rgb(149,28,82);
 }
 
 form#registerform {
@@ -123,4 +127,18 @@ form, .forgot-panel {
 
 #loginBtn, #registerBtn {
   transition: all .5s ease;
+}
+
+p{
+  margin-bottom: 10px;
+  color: #cfb284;
+  font-weight: bold;
+}
+
+.form-control.success input {
+  border-color: #2ecc71;
+}
+
+form-control.error input {
+  border-color: #e74c3c;
 }
