@@ -20,6 +20,11 @@ const userSchema = new mongoose.Schema({
         required: true,
         unique: true
     },
+    isAdmin: {
+        type: Boolean,
+        default:false,
+        required: true
+    },
     encry_password: {
         type: String,
         required:true
