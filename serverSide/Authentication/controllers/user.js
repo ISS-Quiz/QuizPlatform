@@ -15,7 +15,12 @@ exports.signup = (req,res) => {
             error: errors.array()[0].msg
         })
     }
+    const { email, password } = req.body;
+
+  try {
     const user = new User(req.body)
+    if (user == User.findOne({email})) return res.status(400).send("User already registered.");
+    
     user.save((err, user) => {
         if(err) {
 
@@ -30,6 +35,11 @@ exports.signup = (req,res) => {
             user
         })
     })
+  } catch (err) {
+    console.log(err);
+    res.status(500).send("Something went wrong");
+  }
+ 
 }
 
 exports.signin = (req,res) => {
