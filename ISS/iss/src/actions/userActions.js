@@ -1,15 +1,15 @@
 import axios from "axios";
 
 
-export const loginUser = (user) => async dispatch => {
+export const loginUser = (user, navigate) => async dispatch => {
+    console.log("Logging in ...")
     dispatch ({type: 'USER_LOGIN_REQUEST'})
     const url = "http://localhost:8000/api/signin"
     try {
-        const response =await axios.post(url,user)
-        console.log(response);
+        const response = await axios.post(url,user)
         dispatch({type: 'USER_LOGIN_SUCCESS', payload: response.data})
         sessionStorage.setItem('currentUser', JSON.stringify(response.data))
-        window.location.href='/'
+        navigate('/')
     } catch (error) {
         dispatch({type:'USER_LOGIN_FAILED', payload: error})
     }

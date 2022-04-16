@@ -1,12 +1,11 @@
 import React from 'react';
-import '../../App.css';
 import {useState, useEffect} from 'react';
-import axios from 'axios';
 import { loginUser } from '../../actions/userActions';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Loading from '../Loading';
 import Error from '../Error';
+import '../../App.css';
 
 export default function SignUp() {
     const [name, setName] = useState("");
@@ -14,20 +13,22 @@ export default function SignUp() {
     const [formErrors, setFormErrors] = useState({});
     const [isSubmit, setIsSubmit] = useState(false);
     const loginstate = useSelector(state => state.loginUserReducer)
-    const {loading, error} = loginstate
+    const {loading,error} = loginstate
+
     const dispatch = useDispatch()
-    
+    const navigate = useNavigate()
 
 
    useEffect(() => {
+  
      if (sessionStorage.getItem('currentUser'))
      {
-       window.location.href='/'
+       navigate("/")
      }
    }, [])
    function login () {
      const user= {name, password}
-     dispatch(loginUser(user))
+     dispatch(loginUser(user, navigate))
      setFormErrors(validate(name,password))
      setIsSubmit(true)
    }

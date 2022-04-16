@@ -69,15 +69,13 @@ exports.signin = (req,res) => {
 
         // Send response 
         
-        const {_id,name,email,encry_password} = user
-        console.log(user.name)
+        const {_id,name,email,isAdmin,encry_password} = user
+        console.log(user.email)
         return res.json({
-            token ,
             user: {
                 _id,
                 name,
                 email,
-                encry_password
             }
         })
     })
