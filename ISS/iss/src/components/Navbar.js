@@ -10,11 +10,9 @@ import './NavBar.css';
 function Navbar() {
     const [click,setClick]=useState(false);
     const [button, setButton] = useState(true);
-    const userstate = useSelector((state) => state.loginUserReducer)
-    const {currentUser} = userstate
+    const user = useSelector(state => state.loginUserReducer.currentUser)
     const dispatch = useDispatch()
     const handleClick=()=>setClick(!click);
-
     const closeMobileMenu=()=>setClick(false);
     const showButton = () => {
         if (window.innerWidth <= 960) {
@@ -24,6 +22,7 @@ function Navbar() {
         }
       };
       useEffect(() => {
+        console.log("cu", user)
         showButton();
       }, []);
     
@@ -56,17 +55,17 @@ function Navbar() {
               Take a Quiz
             </Link>
         </li> 
-        {currentUser ? (
-          <li className='nav-item'>
-         <div class="dropdown" >
-         <button class="dropbtn">Username</button>
-         <div class="dropdown-content">
-         <a href="#">Account details</a>
-         <a href="#">Quizzes  </a>
-         <a href="#" onClick={() => dispatch(logoutUser())}>Logout</a>
-         </div>
-       </div>
-       </li>
+        {user ? (
+            <li className='nav-item'>
+            <div className="dropdown" >
+            <button className="dropbtn">{user.name}</button>
+            <div className="dropdown-content">
+            <a href="#">Account details</a>
+            <a href="#">Quizzes  </a>
+            <a href="#" onClick={() => dispatch(logoutUser())}>Logout</a>
+            </div>
+          </div>
+          </li>
           ) : (
             <li className='nav-item'>
             <Link to='/login' className='nav-links' onClick={closeMobileMenu}>
@@ -83,7 +82,8 @@ function Navbar() {
         </li>
 
         </ul>
-        {button && <Button buttonStyle='btn--outline'>SIGN UP</Button>}
+
+        {!user && button && <Button buttonStyle='btn--outline'>SIGN UP</Button>}
       </div>
 
   </nav>
