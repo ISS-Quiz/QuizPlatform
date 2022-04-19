@@ -37,7 +37,9 @@ export default function CreateQuiz() {
   }) 
   const navigate = useNavigate()
   
-
+const resetForm = () => {
+  
+}
 
  const change = (e) => {
    answers.push(answer1)
@@ -84,6 +86,9 @@ const onChange4 =()=>{
   return (
   <Fragment>
     <Helmet><title>JaWEB - Create a quiz</title></Helmet>
+    <form >
+
+    
     <div className='createquiz'>
       <div className='quiz-wrapper'>
         <div className='lifeline-container'>
@@ -114,6 +119,7 @@ const onChange4 =()=>{
     </div>
     </div>
     </div>
+    </form>
   </Fragment>
   );
 }
