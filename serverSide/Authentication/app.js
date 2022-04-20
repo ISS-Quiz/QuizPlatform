@@ -29,6 +29,9 @@ const userRoutes= require("./routes/user")
 // Using routes
 app.use('/api', userRoutes)
 
+const QuizItemsRoutes = require("./routes/QuizItems")
+app.use('/api', QuizItemsRoutes)
+
 //const port = process.env.PORT || 8000
 
 // Starting a server
