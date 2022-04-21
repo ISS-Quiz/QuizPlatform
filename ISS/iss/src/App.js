@@ -8,7 +8,6 @@ import CreateQuiz from './components/pages/CreateQuiz';
 import TakeQuiz from './components/pages/TakeQuiz';
 import Login from './components/pages/Login'
 
-import 'bootstrap'
 
 import SignUp from './components/pages/SignUp';
 function App() {
