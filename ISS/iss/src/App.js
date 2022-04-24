@@ -7,6 +7,7 @@ import {BrowserRouter as Router,Switch,Route, Routes} from 'react-router-dom';
 import CreateQuiz from './components/pages/CreateQuiz';
 import TakeQuiz from './components/pages/TakeQuiz';
 import Login from './components/pages/Login'
+import QuizItems from './components/pages/QuizItems'
 
 
 import SignUp from './components/pages/SignUp';
@@ -31,6 +32,9 @@ function App() {
       </Routes>
        <Routes>
           <Route exact path='/sign-up' element={<SignUp />} />
+      </Routes>
+      <Routes>
+          <Route exact path='/quizItems' element={<QuizItems />} />
       </Routes>
 
 

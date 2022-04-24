@@ -2,6 +2,7 @@ import React, {Fragment, useState, useEffect} from 'react';
 import {Helmet} from 'react-helmet';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { IoIosAddCircleOutline } from "react-icons/io";
+import axios from 'axios';
 import {GrFormPreviousLink} from "react-icons/gr";
 import {MdDisabledByDefault} from "react-icons/md"
 import '../../App.css';
@@ -34,8 +35,8 @@ export default function CreateQuiz() {
   const [answers,setAnswers] = useState([])  
  
   const [QuizItem, setQuizItem] = useState({
+    'answers': answers,
     'question': '',
-    'answers': answers
   }) 
 
   const [quizItems, setQuizItems] = useState ([])
@@ -50,10 +51,10 @@ export default function CreateQuiz() {
    answers.push(answer4)
    answers.push(rightAnswer)
    setQuizItem({ ...QuizItem,"answers": answers})
-   console.log("=", QuizItem)
+   console.log("QuizItem =", QuizItem)
    quizItems.push(QuizItem)
    setAnswers([])
-   console.log("==", quizItems)
+   console.log("quizItems =", quizItems)
 
    
  }
@@ -66,12 +67,11 @@ export default function CreateQuiz() {
    setAnswer4({'value':'', 'Boolean': false})
    setRightAnswer('')
    setQuizItem({
-    'question': '',
-    'answers': answers
+    'answers': answers,
+    'question': '',  
   })
-  
-
  }
+ 
 
  const onChange1 =()=>{
    setAnswer1({...answer1,'Boolean': true})
@@ -104,8 +104,18 @@ const onChange4 =()=>{
   setAnswer1({...answer1,'Boolean':false})
   setRightAnswer(answer4.value)
 }
+const navigate = useNavigate()
 
-
+const Save = () => {
+  change()
+  const url = "http://localhost:8000/api/addOne"
+  console.log(quizItems)
+  axios.post(url, {  
+    quizItems
+}).then(() => console.log(quizItems[0].answers))
+.catch(error => console.log(error))
+  navigate("/quizItems")
+}
 
 
  
@@ -141,7 +151,7 @@ const onChange4 =()=>{
     <div className='button-container'>
       
       <button type={submit} onClick={change}>add <IoIosAddCircleOutline/></button>
-      <button onClick={() => console.log(QuizItem)}> <Link to='/createQuiz'>save</Link>  </button>  
+      <button onClick={Save} >Save</button>  
     </div>
     </div>
     </div>
