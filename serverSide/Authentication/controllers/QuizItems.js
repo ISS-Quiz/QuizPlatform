@@ -1,21 +1,14 @@
 const QuizItems = require("../models/QuizItems")
 
 exports.addOne = (req,res) => {
-    const quizItem = new QuizItems(req.body);
-    quizItem.save((err, quizItem) => {
-        if(err) {
-            return res.status(400).json({
-                error:"Unable to add quizItem"
-            
-            })
-        }
-        console.log(quizItem)
-        return res.json({
-            message: "Success",
-            quizItem
-        })
+    const quiz = new QuizItems(req.body);
+    console.log(quiz.quizItems[0])
+    quiz.save()
+    .then ((quizItem) => {
+        res.status(200).send(quizItem)
     })
-    .catch((error)=> {
-        res.status(500).json(error);
+    .catch((err)=> {
+        console.log(err);
+        res.status(500).send("Something went wrong");
     })
 };
