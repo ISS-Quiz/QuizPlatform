@@ -1,0 +1,35 @@
+/// font-settings
+$quicksand: 'Quicksand', sans-serif;
+
+/// colors
+$orange: #ffa500;
+$off-white: #C5C6C7;
+$green: #57b846;
+$red: #ea4355;
+$cyan: #00ffff;
+$blue: #45A29E;
+$off-black: #333;
+$white: #fff;
+$success-text: #4caf50;
+$error-text: #f44336;
+
+/// sizes
+$xs: 0.5rem;
+$n: 1rem;
+$s: 1.5rem;
+$m: 2rem;
+$l: 3rem;
+$xl: 5rem;
+$xxl: 7rem;
+
+/// button-radius
+$button-radius: 30px;
+
+/// breakpoints
+$lbp: 1024px;
+$mbp: 768px;
+$sbp: 641px;
+$xspb: 480px;
+
+/// shadow
+$shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);

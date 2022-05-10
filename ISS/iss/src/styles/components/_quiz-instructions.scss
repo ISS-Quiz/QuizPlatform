@@ -1,0 +1,41 @@
+.instructions-wrap {
+    border: 1px solid darken($off-white, 10%);
+    border-radius: 5px;
+    margin-top: $l;
+    margin-bottom: $l;
+    padding: $s $l;
+
+    h1 {
+        color: $off-black;
+        font-size: $m;
+        text-align: center;
+    }
+
+    .lifeline {
+        position: relative;
+        top: -3px;
+    }
+
+    .lifeline-icon {
+        color: $green;
+        cursor: pointer
+    }
+
+    .browser-default {
+        padding-left: 30px;
+        margin-top: 10px;
+        margin-bottom: 15px;
+    }
+
+    img {
+        width: 80%;
+        height: 50%;
+    }
+}
+
+@media (max-width: $mbp) {
+    .instructions-wrap img {
+        width: 100% !important;
+        height: 150% !important;
+    }
+}

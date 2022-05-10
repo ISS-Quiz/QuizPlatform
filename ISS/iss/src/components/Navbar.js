@@ -51,7 +51,7 @@ function Navbar() {
             </Link>
         </li>
         <li className='nav-item'>
-            <Link to='/Quizzes' className='nav-links' onClick={closeMobileMenu}>
+            <Link to='/TakeQuiz' className='nav-links' onClick={closeMobileMenu}>
               Take a Quiz
             </Link>
         </li> 
@@ -61,7 +61,7 @@ function Navbar() {
             <button className="dropbtn">{user.name}</button>
             <div className="dropdown-content">
             <a href="#">Account details</a>
-            <a href="#">Quizzes  </a>
+            <a href="#">TakeQuiz </a>
             <a href="#" onClick={() => dispatch(logoutUser())}>Logout</a>
             </div>
           </div>
