@@ -17,7 +17,7 @@
   
 }
 .login {
-  background-image: url('https://th.bing.com/th/id/R.4b3c01fc2fd77022df679778d45b626e?rik=DTEGlltLBzw5dw&riu=http%3a%2f%2fsgugenetics.pbworks.com%2ff%2f1492795830%2fdna.jpg&ehk=z%2fSv69TNUIxS2Tuuh0UHcuc8t8WtMqDe25XV5F0tC6c%3d&risl=&pid=ImgRaw&r=0');
+  background-color: #1F2833; 
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -85,8 +85,8 @@ body {
   border-radius: 5px;
   box-shadow: 0px 2px 7px rgba(0,0,0, 0.2);
   overflow: hidden;
-  color: #ffffff;
-  background: linear-gradient(90deg,  rgb(120, 187, 196) 0%, rgb(56, 148, 125)  100%);
+  color: #66FCF1;
+  background: linear-gradient(90deg,  #1F2833 20%, #0b0c10  80%);
   box-shadow: 20px 20px 20px lightblue;
 
 }
@@ -134,7 +134,7 @@ button.active {
   border:none;
   border-radius: 5px;
   margin-bottom: 10px;
-  background:  linear-gradient(90deg, rgb(120, 187, 196) 0%, #D0F0C0 64%, rgba(43,238,205,0.1699054621848739) 100%);;
+  background:  linear-gradient(90deg, #C5C6C7 0%, #C5C6C7 10%, #C5C6C7 100%);;
 
 }
 
@@ -147,13 +147,13 @@ button.submit {
   text-transform: uppercase;
   font-size: 1em;
   text-align:center;
-  color: rgba(255, 255, 255, 1);
+  color: #66FCF1;
   padding: 8px 0px;
   width: 100%;
   height: 35px;
   border-radius: 20px;
   margin-top: 23px;
-  background-color: rgb(149,28,82);
+  background-color: #fff;
   position: relative;
   background-color: transparent;
     color: #fff;
@@ -225,7 +225,7 @@ form-control.error input {
   position: relative;
   font-size: 1em;
   text-align:center;
-  color: rgba(255, 255, 255, 1);
+  color: #45A29E;
   padding: 8px 0px;
   font-weight: 700;
   background-color: #c0c0c0;
@@ -243,7 +243,7 @@ form-control.error input {
   font-weight: 900;
   border:none;
   border-radius: 5px;
-  background:  linear-gradient(90deg, rgb(120, 187, 196) 0%, #D0F0C0 64%, rgba(43,238,205,0.1699054621848739) 100%);;
+  background:  linear-gradient(90deg, #45A29E 0%, #1F2833 64%, #0b0c10 100%);;
 }
 
 
@@ -259,8 +259,8 @@ form-control.error input {
   border-radius: 5px;
   box-shadow: 0px 2px 7px rgba(0,0,0, 0.2);
   overflow: hidden;
-  color: #ffffff;
-  background: linear-gradient(90deg,  rgb(120, 187, 196) 0%, rgb(56, 148, 125)  100%);
+  color: #66FCF1;
+  background: linear-gradient(90deg,  #1F2833 0%, #0B0C10 100%);
   box-shadow: 20px 20px 20px lightblue;
 
  
@@ -347,6 +347,17 @@ input .box {
   height: 0.5px;
   margin-top: none;
   
+}
+
+li:hover {
+  background-color: #C5C6C7;
+  color: white;
+}
+li.correct {
+  background-color: rgb(53, 212, 53);
+}
+li.selected:not(correct) {
+  background-color: rgb(206, 58, 58);
 }
 
 

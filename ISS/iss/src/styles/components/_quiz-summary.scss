@@ -1,0 +1,58 @@
+h1 {
+    color: $red;
+    text-align: center;
+    margin-bottom: $l;
+}
+
+.container {
+    padding: $xl $s;
+    margin: $s auto;
+    background-color: $off-white;
+
+    .stat {
+        color: $blue;
+    }
+
+    .left {
+        padding-left: $xxl;
+        letter-spacing: 1px;
+    }
+
+    .right {
+        padding-right: $xxl;
+        color: $red;
+    }
+
+    h2 {
+        text-align: center;
+        padding-bottom: $xs;
+        color: $green;
+    }
+
+    h4 {
+        text-align: center;
+        margin-bottom: $s;
+    }
+}
+
+.links {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    padding-top: $n;
+}
+
+.button-link-bth {
+    text-align: right;
+    padding: $s $m;
+    background-color: $red;
+    color: $off-white;
+    margin-right: $xxl;
+}
+
+.button-link-pa {
+    text-align: left;
+    padding: $s $m;
+    background-color: $green;
+    color: $off-white;
+}
