@@ -28,7 +28,7 @@ export default function SignUp() {
         email,
         password
   }).then(setSuccess(true) ,setError(false))
-  .catch(error => console.log(error))
+  .catch((e) => console.log(e))
   setFormErrors(validate(name,email,password,confirmpassword))
   setIsSubmit(true)
 }
@@ -38,18 +38,27 @@ const validate = (name,email,password, confirmpassword) => {
      const regex = /^[^\s@]+[^\s@]+\.[^\s@]{2,}$/i;
      if(!name){
         errors.name = "Username is required!";  
+        setError(true);setSuccess(false)
      }
      if(!email){
-        errors.email = "Email is required!"
+        errors.email = "Email is required!";
+        setError(true);setSuccess(false)
+
      }
      if(!password){
-        errors.password = "Password is required!"
+        errors.password = "Password is required!";
+        setError(true);setSuccess(false)
+
      }
      if(!confirmpassword){
-      errors.confirmpassword = "Password is required!"
+      errors.confirmpassword = "Password is required!";
+      setError(true);setSuccess(false)
+
    }
      if(confirmpassword !== password){
-      errors.confirmpassword="Password mismatch!"
+      errors.confirmpassword="Password mismatch!";
+      setError(true);setSuccess(false)
+
    }
      return errors;
 }
@@ -59,27 +68,30 @@ const validate = (name,email,password, confirmpassword) => {
       <div className="login-register-wrapper">
         <div className="nav-buttons"> 
         <div className='form-group' >
-        <h1  id="registerBtn" > Register </h1>
+        <h2  id="registerBtn" > Register </h2>
         {success && (<Success success='You have been registred successfully'/>) }  
         {error && (<Error error='Invalid credentials'/>)}
           <div>
            <label for='fullname'> full name </label>
-           <input type='text' id='fullname' value={name} onChange={e=>setName(e.target.value)} required />
+           <input placeholder= "Enter name" type='text' id='fullname' value={name} onChange={e=>setName(e.target.value)} required />
            <p className='paragraph'>{formErrors.name}</p>
            </div>
            <label for='email'> email </label>
-           <input type='email' id='email' value={email} onChange={e=>setEmail(e.target.value)} required />
+           <input type='email' placeholder='Enter Email' id='email' value={email} onChange={e=>setEmail(e.target.value)} required />
            <p className='paragraph'>{formErrors.email}</p>
            <label for='password'> password </label>
-           <input type='password' id='password' value={password} onChange={e=>setPassword(e.target.value)} required />
+           <input type='password' placeholder=' 6+ characters' id='password' value={password} onChange={e=>setPassword(e.target.value)} required />
            <p className='paragraph'>{formErrors.password}</p>
            <label for='confirmpassword'> confirm password </label>
            <input type='password' id='confirmpassword' value={confirmpassword} onChange={e=>setConfirmPassword(e.target.value)} />
            <p className='paragraph'>{formErrors.confirmpassword}</p>
            <button className="forgot-panel"  > <a href='#'> Forgot your password? </a></button>
+          
+        
+   
            <button type='submit' className="submit" onClick={submit}>Submit</button>
            <div className='box'>
-           <span>Already have an account ? <Link to='/login' >Login</Link> </span>
+           <span>Already have an account ? <Link to='/lcdogin' >Login</Link> </span>
            </div>
            </div> 
            </div>
