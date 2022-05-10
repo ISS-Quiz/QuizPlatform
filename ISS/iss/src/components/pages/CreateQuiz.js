@@ -49,17 +49,19 @@ export default function CreateQuiz() {
    answers.push(answer2)
    answers.push(answer3)
    answers.push(answer4)
-   answers.push(rightAnswer)
-   setQuizItem({ ...QuizItem,"answers": answers})
-   console.log("QuizItem =", QuizItem)
+   setQuizItem({...QuizItem,"answers":answers})
+   console.log("quizItem=", QuizItem)
    quizItems.push(QuizItem)
+   console.log("quizItems", quizItems)
+   
    setAnswers([])
-   console.log("quizItems =", quizItems)
+   
 
    
  }
 
  const submit = (e) => {
+  
    e.preventDefault()
    setAnswer1({'value':'', 'Boolean': false})
    setAnswer2({'value':'', 'Boolean': false})
@@ -105,14 +107,18 @@ const onChange4 =()=>{
   setRightAnswer(answer4.value)
 }
 const navigate = useNavigate()
+const [quiz,setQuiz] = useState({
+  'author': '61f557af2e60ae73bbce112f',
+  'quizItems': quizItems
+})
+const [author,setAuthor] =useState("61f557af2e60ae73bbce112f")
 
 const Save = () => {
   change()
   const url = "http://localhost:8000/api/addOne"
-  console.log(quizItems)
   axios.post(url, {  
     quizItems
-}).then(() => console.log(quizItems[0].answers))
+}).then(() => console.log(quizItems))
 .catch(error => console.log(error))
   navigate("/quizItems")
 }
@@ -150,7 +156,7 @@ const Save = () => {
         </div>
     <div className='button-container'>
       
-      <button type={submit} onClick={change}>add <IoIosAddCircleOutline/></button>
+      <button type={submit} onClick={change}>add</button>
       <button onClick={Save} >Save</button>  
     </div>
     </div>

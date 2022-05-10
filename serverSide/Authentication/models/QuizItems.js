@@ -6,38 +6,35 @@ const QuizItemsSchema = new mongoose.Schema(
         {
             author: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
             quizItems:[
-                {QuizItem:{
-                    answers: [ {
-                        answer1: {
-                            value: String,
-                            Boolean: {type:Boolean,default:false}
+                {
+                    answers:  [
+                        {
+                            "value": String,
+                            "Boolean": Boolean
                         }, 
-                        answer2: {
-                            value: String,
-                            Boolean: Boolean 
+                        {
+                            "value": String,
+                            "Boolean": Boolean
                         },
-                        answer3: {
-                            value: String,
-                            Boolean: Boolean
+                        {
+                            "value": String,
+                            "Boolean": Boolean
                         },
-                        answer4: {
-                            value: String,
-                            Boolean: Boolean
-                        },
-                        rightAnswer: {
-                            type: String,
-                        },
-                    }
-                    ],
+                        {
+                            "value": String,
+                            "Boolean": Boolean
+                        }
+                    ]
+                    ,
                     question: {
                         type: String
                     }
                 }
-            }
             ]
         }
     
 );
+
 
 module.exports = mongoose.model("QuizItems", QuizItemsSchema);
 

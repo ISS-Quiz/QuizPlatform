@@ -48,7 +48,7 @@ export default function SignUp() {
         <div className="login-register-wrapper">
         <div className="nav-buttons"> 
         <div className='form-group' >
-        <h1  id="registerBtn" > Login </h1>
+        <h2  id="registerBtn" > Login </h2>
         {loading && (<Loading/>) }  
         {error && (<Error error='Invalid credentials'/>)}
         <label for='username' > USERNAME </label>
