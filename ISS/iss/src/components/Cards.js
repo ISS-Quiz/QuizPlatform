@@ -10,18 +10,6 @@ function Cards() {
         <div className='cards__wrapper'>
           <ul className='cards__items'>
             <CardItem
-              src='https://th.bing.com/th/id/R.4b3c01fc2fd77022df679778d45b626e?rik=DTEGlltLBzw5dw&riu=http%3a%2f%2fsgugenetics.pbworks.com%2ff%2f1492795830%2fdna.jpg&ehk=z%2fSv69TNUIxS2Tuuh0UHcuc8t8WtMqDe25XV5F0tC6c%3d&risl=&pid=ImgRaw&r=0'
-              text='DNA Replication Quiz'
-              label='Science'
-              path='/Quizzes'
-            />
-            <CardItem
-              src='https://www.mykidstime.com/wp-content/uploads/2020/04/Math-websites-for-kids-1.jpg'
-              text='Multiplication Quiz'
-              label='Maths'
-              path='/Quizzes'
-            />
-            <CardItem
               src='https://th.bing.com/th/id/R.d86cf69cb6336c6ef64796e4b948f70d?rik=wCfnIaxtLo6Fwg&pid=ImgRaw&r=0'
               text='History of World War II'
               label='History'

@@ -1,0 +1,89 @@
+[
+    {
+        "question": "Who wrote Julius Caesar, Macbeth and Hamlet?",
+        "optionA": "Wole Soyinka",
+        "optionB": "William Shakespeare",
+        "optionC": "Ngozi Chimamanda Adichie",
+        "optionD": "Dan Brown",
+        "answer": "William Shakespeare"
+    },
+
+
+    {
+        "question": "What takes place in Hong Kong's Happy Valley?",
+        "optionA": "Chicken Wrestling",
+        "optionB": "Horse racing",
+        "optionC": "Street Racing",
+        "optionD": "Arm Wrestling",
+        "answer": "Horse racing"
+    },
+
+    {
+        "question": "Who painted the Mona Lisa?",
+        "optionA": "Alexander Graham Bell",
+        "optionB": "Sir Isaac Newton",
+        "optionC": "Leonardo Da Vinci",
+        "optionD": "Albert Einstein",
+        "answer": "Leonardo Da Vinci"
+    },
+
+    {
+        "question": "What’s the most important book in the Moslem religion?",
+        "optionA": "The Koran",
+        "optionB": "The Dictionary",
+        "optionC": "The Bible",
+        "optionD": "The Chemistry text Book",
+        "answer": "The Koran"
+    },
+
+    {
+        "question":"Which Apollo mission was the last one in NASA&#039;s Apollo program?",
+        "optionA": "Apollo 17",
+        "optionB": "Apollo 11",
+        "optionC": "Apollo 15",
+        "optionD": "Apollo 13",
+        "answer": "Apollo 17"
+    },
+
+    {
+        "question": "Who invented the electric light bulb?",
+        "optionA": "Tom Cruise",
+        "optionB": "Barack Obama",
+        "optionC": "Wole Soyinka",
+        "optionD": "Thomas Edison",
+        "answer": "Thomas Edison"
+    },
+
+    {
+        "question": "What was the first sport to have been played on the moon?",
+        "optionA": "Tennis",
+        "optionB": "Handball",
+        "optionC": "Football",
+        "optionD": "Golf",
+        "answer": "Golf"
+    },
+    {
+        "question": "How long did World War II last?",
+        "optionA": "6 years",
+        "optionB": "4 years",
+        "optionC": "5 years",
+        "optionD": "7 years",
+        "answer": "6 years"
+    },
+    {
+        "question": "In what year did the Berlin Wall fall?",
+        "optionA": "1987",
+        "optionB": "1989",
+        "optionC": "1991",
+        "optionD": "1993",
+        "answer": "1993"
+    },
+    {
+        "question": "Which country gifted the Statue of Liberty to the United States of America?",
+        "optionA": "Spain",
+        "optionB": "England",
+        "optionC": "Germany",
+        "optionD": "France",
+        "answer": "France"
+    }
+]

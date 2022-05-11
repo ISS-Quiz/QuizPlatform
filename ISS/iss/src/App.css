@@ -397,8 +397,9 @@ h2{
   margin-bottom: 26px; 
   font :bold 24px/29px "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif
 }
+.cards-container {
+  display: flex;
 
-=======
 li:hover {
   background-color: #C5C6C7;
   color: white;
@@ -411,4 +412,6 @@ li.selected:not(correct) {
 }
 
 
+  justify-content: space-around;
+}
 

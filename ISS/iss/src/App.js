@@ -6,13 +6,19 @@ import Home from './components/pages/Home';
 import {BrowserRouter as Router,Route, Routes} from 'react-router-dom';
 import CreateQuiz from './components/pages/CreateQuiz';
 import TakeQuiz from './components/pages/TakeQuiz';
+
+import Login from './components/pages/Login';
+
+
 import Login from './components/pages/Login'
 import QuizItems from './components/pages/QuizItems'
 import QuizInstructions from './components/quiz/QuizInstructions';
 import Play from './components/quiz/Play';
 import QuizSummary from './components/quiz/QuizSummary';
 
+
 import SignUp from './components/pages/SignUp';
+import QuizList from './components/pages/QuizLists';
 function App() {
   return (
     <>
@@ -43,8 +49,9 @@ function App() {
           <Route exact path='/sign-up' element={<SignUp />} />
       </Routes>
       <Routes>
-          <Route exact path='/quizItems' element={<QuizItems />} />
+          <Route exact path='/QuizLists' element={<QuizList />} />
       </Routes>
+      
 
 
 
