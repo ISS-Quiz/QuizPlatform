@@ -91,7 +91,7 @@ const validate = (name,email,password, confirmpassword) => {
    
            <button type='submit' className="submit" onClick={submit}>Submit</button>
            <div className='box'>
-           <span>Already have an account ? <Link to='/lcdogin' >Login</Link> </span>
+           <span>Already have an account ? <Link to='/Login' >Login</Link> </span>
            </div>
            </div> 
            </div>

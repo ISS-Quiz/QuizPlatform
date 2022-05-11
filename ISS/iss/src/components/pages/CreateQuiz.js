@@ -6,11 +6,13 @@ import axios from 'axios';
 import {GrFormPreviousLink} from "react-icons/gr";
 import {MdDisabledByDefault} from "react-icons/md"
 import '../../App.css';
+import QuizList from './QuizLists';
+
 
 
 
 export default function CreateQuiz() {
- 
+  const [active,setActive]= useState(true)
   const [answer1, setAnswer1] = useState({
     'value': '',
     'Boolean': false
@@ -37,6 +39,7 @@ export default function CreateQuiz() {
   const [QuizItem, setQuizItem] = useState({
     'answers': answers,
     'question': '',
+
   }) 
 
   const [quizItems, setQuizItems] = useState ([])
@@ -71,6 +74,7 @@ export default function CreateQuiz() {
    setQuizItem({
     'answers': answers,
     'question': '',  
+    'rightAnswer': rightAnswer
   })
  }
  
@@ -120,7 +124,7 @@ const Save = () => {
     quizItems
 }).then(() => console.log(quizItems))
 .catch(error => console.log(error))
-  navigate("/quizItems")
+  setActive(false)
 }
 
 
@@ -128,6 +132,7 @@ const Save = () => {
   return (
   <Fragment>
     <Helmet><title>JaWEB - Create a quiz</title></Helmet>
+    {active ? (
     <form  onSubmit={submit}>
 
     
@@ -161,7 +166,13 @@ const Save = () => {
     </div>
     </div>
     </div>
-    </form>
+    
+
+    </form> ) :
+    (
+      <QuizList quizItems={quizItems} setQuizItems={setQuizItems}/>
+    )
+}
   </Fragment>
   );
 }

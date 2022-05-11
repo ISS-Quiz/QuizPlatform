@@ -6,11 +6,11 @@ import Home from './components/pages/Home';
 import {BrowserRouter as Router,Switch,Route, Routes} from 'react-router-dom';
 import CreateQuiz from './components/pages/CreateQuiz';
 import TakeQuiz from './components/pages/TakeQuiz';
-import Login from './components/pages/Login'
-import QuizItems from './components/pages/QuizItems'
+import Login from './components/pages/Login';
 
 
 import SignUp from './components/pages/SignUp';
+import QuizList from './components/pages/QuizLists';
 function App() {
   return (
     <>
@@ -34,8 +34,9 @@ function App() {
           <Route exact path='/sign-up' element={<SignUp />} />
       </Routes>
       <Routes>
-          <Route exact path='/quizItems' element={<QuizItems />} />
+          <Route exact path='/QuizLists' element={<QuizList />} />
       </Routes>
+      
 
 
 

@@ -375,5 +375,9 @@ h2{
   font :bold 24px/29px "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif
 }
 
+.cards-container {
+  display: flex;
 
+  justify-content: space-around;
+}
 
